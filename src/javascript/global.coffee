@@ -5,7 +5,7 @@ $(window).on 'resize', ->
   debugger
 
 window.BarChart =
-  barHeight: 40
+  barHeight: 45
   width: 420
   init: ->
     @width = $('.chart').width()
@@ -23,7 +23,7 @@ window.BarChart =
     X_DATA = @getXData(key)
     x = d3.scale.linear()
           .domain([0, d3.max(X_DATA)])
-          .range([0, @width])
+          .range([0, @width - 150])
 
     @chart = d3.select(".chart")
       .attr("width", @width)
@@ -35,22 +35,30 @@ window.BarChart =
         .attr("transform", (d, i) => "translate(0, #{i * @barHeight})")
 
     @bar.append('rect')
-        # .attr('width', x)
+        .attr('class', 'gray')
+        .attr('x', 150)
+        .attr('width', "100%")
+        .attr('height', @barHeight - 5)
+
+    @bar.append('rect')
+        .attr('x', 150)
+        .attr('class', 'data')
         .attr('width', (d) => x(@clean_num d[key]))
-        .attr('height', @barHeight - 3)
+        .attr('height', @barHeight - 5)
 
     @bar.append("text")
-        .attr("x", (d) =>
-          x(@clean_num d[key]) - 3
-        )
-        .attr("y", @barHeight - 10)
+        .attr("x", 160)
+        # .attr("x", (d) =>
+        #   x(@clean_num d[key]) - 3
+        # )
+        .attr("y", 20)
         .attr("dy", ".35em")
-        .text (d) -> d[key]
+        .text (d) -> d[key].replace(/\.\d\d/, '')
 
     @bar.append("text")
         .attr('class', 'name')
-        .attr("x", 3)
-        .attr("y", 10)
+        .attr("x", 136)
+        .attr("y", 20)
         .attr("dy", ".35em")
         .text (d) -> d["Region"]
 
@@ -59,24 +67,24 @@ window.BarChart =
     X_DATA = @getXData(key)
     x = d3.scale.linear()
           .domain([0, d3.max(X_DATA)])
-          .range([0, @width])
+          .range([0, @width - 150])
 
     @chart.attr("height", @barHeight * X_DATA.length)
     @bar.data(DATA)
       .transition()
-      .select('rect')
+      .select('rect.data')
         .attr('width', (d) =>
           x(@clean_num d[key]) or 0
         )
 
     @bar.transition()
       .select("text")
-        .attr("x", (d) =>
-          Math.max((x(@clean_num d[key]) - 3) or 100)
-        )
+        .attr("x", 160)
+        # .attr("x", (d) =>
+        #   Math.max((x(@clean_num d[key]) - 3) or 100)
+        # )
         .attr("dy", ".35em")
-        .text (d) ->
-          d[key]
+        .text (d) -> d[key].replace(/\.\d\d/, '')
 
   showOperations: ->
     _ = require 'underscore'

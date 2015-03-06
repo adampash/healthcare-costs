@@ -2,12 +2,17 @@
 @import "typography";
 @import "iframes";
 
+
 body {
+  font-family: ProximaNovaCond-Semibold;
   margin: 0;
   padding: 0;
   .container {
     margin: 0 auto;
     max-width: 640px;
+    h2 {
+      margin-left: 150px;
+    }
     h2.operation {
       font-size: 18px;
       margin-top: -10px;
@@ -17,34 +22,40 @@ body {
       width: 100%;
       height: 400px;
       rect {
-        fill: steelblue;
+        fill: #705AFF;
+      }
+      rect.gray {
+        fill: #E6E6E6;
       }
 
       text {
-        fill: #333;
-        font: 12px sans-serif;
-        text-anchor: end;
+        fill: white;
+        font: 14px sans-serif;
+        text-anchor: start;
         font-weight: 700;
       }
       text.name {
         fill: #333;
-        text-anchor: initial !important;
+        text-anchor: end;
       }
     }
   }
   .operations {
+    margin-left: 150px;
+    h4 {
+      color: #333;
+    }
     div.operation {
       display: inline-block;
-      padding: 3px;
-      background: steelblue;
       cursor: pointer;
       margin: 2px;
-      color: white;
+      color: #808080;
       font-size: 13px;
       border-radius: 2px;
       &.selected {
-        background: red;
+        color: #705AFF;
       }
     }
   }
 }
+@font-face {font-family: 'ProximaNovaCond-Semibold';src: url('webfonts/24FCCC_F_0.eot');src: url('webfonts/24FCCC_F_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24FCCC_F_0.woff') format('woff'),url('webfonts/24FCCC_F_0.ttf') format('truetype');}
