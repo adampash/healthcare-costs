@@ -123,7 +123,7 @@ window.BarChart =
     operations = _.keys(@data[0])
     operations.shift()
 
-    for operation in operations
+    for operation, index in operations
       add = true
       if @mobile
         for op in removeable_ops
@@ -142,6 +142,7 @@ window.BarChart =
            #{display_operation}
           </div>
         """
+        $('.operations').append "|" unless index is operations.length - 1
 
     $('div.operation').first().addClass('selected')
 

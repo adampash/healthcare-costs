@@ -21,7 +21,7 @@ var _ = require('underscore');
 // 
 console.log('page.js loaded!');
 
-},{"jquery":"/Users/ap/code/labs/interactives/healthcare-costs/node_modules/jquery/dist/jquery.js","underscore":"/Users/ap/code/labs/interactives/healthcare-costs/node_modules/underscore/underscore.js"}],"/Users/ap/code/labs/interactives/healthcare-costs/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
+},{"jquery":"/Users/ap/code/labs/interactives/healthcare-costs-full/node_modules/jquery/dist/jquery.js","underscore":"/Users/ap/code/labs/interactives/healthcare-costs-full/node_modules/underscore/underscore.js"}],"/Users/ap/code/labs/interactives/healthcare-costs-full/node_modules/jquery/dist/jquery.js":[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3
  * http://jquery.com/
@@ -9228,7 +9228,7 @@ return jQuery;
 
 }));
 
-},{}],"/Users/ap/code/labs/interactives/healthcare-costs/node_modules/underscore/underscore.js":[function(require,module,exports){
+},{}],"/Users/ap/code/labs/interactives/healthcare-costs-full/node_modules/underscore/underscore.js":[function(require,module,exports){
 //     Underscore.js 1.8.2
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
