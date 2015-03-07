@@ -4,7 +4,7 @@
 
 
 body {
-  font-family: ProximaNovaCond-Semibold;
+  font-family: ProximaNovaACond-Regular;
   margin: 0;
   padding: 0;
   .container {
@@ -12,17 +12,27 @@ body {
     max-width: 640px;
     h2 {
       margin-left: 150px;
+      margin-bottom: 5px;
+      margin-top: 0;
+      font-size: 27px;
+      color: #000333;
+      letter-spacing: 0.5px;
     }
     h2.operation {
-      font-size: 18px;
-      margin-top: -10px;
+      font-size: 21px;
+      margin-bottom: 20px;
+      color: #808080;
+      .type {
+        color: #705AFF;
+      }
     }
     .chart {
       // border: 1px dotted #ccc;
       width: 100%;
       height: 400px;
       rect {
-        fill: #705AFF;
+        // fill: #FF6203;
+        fill: #705aff;
       }
       rect.gray {
         fill: #E6E6E6;
@@ -30,12 +40,13 @@ body {
 
       text {
         fill: white;
-        font: 14px sans-serif;
+        font: 17px ProximaNovaACond-Regular;
+        letter-spacing: 0.25px;
         text-anchor: start;
         font-weight: 700;
       }
       text.name {
-        fill: #333;
+        fill: #000333;
         text-anchor: end;
       }
     }
@@ -43,14 +54,18 @@ body {
   .operations {
     margin-left: 150px;
     h4 {
-      color: #333;
+      color: #000333;
+      font-size: 21px;
+      margin-top: 12px;
+      margin-bottom: 5px;
     }
     div.operation {
       display: inline-block;
+      font-family: ProximaNovaACond-Semibold;
       cursor: pointer;
       margin: 2px;
       color: #808080;
-      font-size: 13px;
+      font-size: 14px;
       border-radius: 2px;
       &.selected {
         color: #705AFF;
@@ -58,4 +73,7 @@ body {
     }
   }
 }
+
+@font-face {font-family: 'ProximaNovaACond-Semibold';src: url('webfonts/24FCCC_3_0.eot');src: url('webfonts/24FCCC_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24FCCC_3_0.woff') format('woff'),url('webfonts/24FCCC_3_0.ttf') format('truetype');}
 @font-face {font-family: 'ProximaNovaCond-Semibold';src: url('webfonts/24FCCC_F_0.eot');src: url('webfonts/24FCCC_F_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24FCCC_F_0.woff') format('woff'),url('webfonts/24FCCC_F_0.ttf') format('truetype');}
+@font-face {font-family: 'ProximaNovaACond-Regular';src: url('webfonts/24FCCC_D_0.eot');src: url('webfonts/24FCCC_D_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24FCCC_D_0.woff') format('woff'),url('webfonts/24FCCC_D_0.ttf') format('truetype');}
