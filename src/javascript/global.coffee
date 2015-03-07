@@ -29,7 +29,7 @@ window.BarChart =
     X_DATA = @getXData(key)
     x = d3.scale.linear()
           .domain([0, d3.max(X_DATA)])
-          .range([0, @width - 150])
+          .range([0, @width - 135])
 
     @chart = d3.select(".chart")
       .attr("width", @width)
@@ -47,23 +47,20 @@ window.BarChart =
         .attr('height', @barHeight - 5)
 
     @bar.append('rect')
-        .attr('x', 150)
+        .attr('x', 135)
         .attr('class', 'data')
         .attr('width', (d) => x(@clean_num d[key]))
         .attr('height', @barHeight - 5)
 
     @bar.append("text")
-        .attr("x", 160)
-        # .attr("x", (d) =>
-        #   x(@clean_num d[key]) - 3
-        # )
+        .attr("x", 145)
         .attr("y", 19)
         .attr("dy", ".35em")
         .text (d) -> d[key].replace(/\.\d\d/, '')
 
     @bar.append("text")
         .attr('class', 'name')
-        .attr("x", 136)
+        .attr("x", 121)
         .attr("y", 19)
         .attr("dy", ".35em")
         .text (d) -> d["Region"]
@@ -75,7 +72,7 @@ window.BarChart =
     X_DATA = @getXData(key)
     x = d3.scale.linear()
           .domain([0, d3.max(X_DATA)])
-          .range([0, @width - 150])
+          .range([0, @width - 135])
 
     @chart.attr("height", @barHeight * X_DATA.length)
     @bar.data(DATA)
@@ -87,7 +84,7 @@ window.BarChart =
 
     @bar.transition()
       .select("text")
-        .attr("x", 160)
+        .attr("x", 145)
         .attr("dy", ".35em")
         .text (d) -> d[key].replace(/\.\d\d/, '')
 
@@ -117,20 +114,6 @@ window.BarChart =
 
       $('.selected').removeClass('selected')
       $el.addClass('selected')
-
-
-String.prototype.toTitleCase = ->
-  smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i
-
-  @replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, (match, index, title) ->
-    if index > 0 && index + match.length != title.length && match.search(smallWords) > -1 && title.charAt(index - 2) != ":" && (title.charAt(index + match.length) != '-' || title.charAt(index - 1) == '-') && title.charAt(index - 1).search(/[^\s-]/) < 0
-      return match.toLowerCase()
-
-    if (match.substr(1).search(/[A-Z]|\../) > -1)
-      return match
-
-    return match.charAt(0).toUpperCase() + match.substr(1)
-  )
 
 BarChart.showOperations()
 BarChart.renderGraph("APPENDECTOMY Inpatient")

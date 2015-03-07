@@ -8,18 +8,21 @@ body {
   margin: 0;
   padding: 0;
   .container {
-    margin: 0 auto;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    margin: 15px auto 25px;
+    padding: 35px 0;
     max-width: 640px;
     h2 {
-      margin-left: 150px;
+      margin-left: 135px;
       margin-bottom: 5px;
       margin-top: 0;
-      font-size: 27px;
-      color: #000333;
+      font-size: 25px;
+      color: #000;
       letter-spacing: 0.5px;
     }
     h2.operation {
-      font-size: 21px;
+      font-size: 19px;
       margin-bottom: 20px;
       color: #808080;
       .type {
@@ -46,16 +49,16 @@ body {
         font-weight: 700;
       }
       text.name {
-        fill: #000333;
+        fill: #000;
         text-anchor: end;
       }
     }
   }
   .operations {
-    margin-left: 150px;
+    margin-left: 135px;
     h4 {
-      color: #000333;
-      font-size: 21px;
+      color: #000;
+      font-size: 19px;
       margin-top: 12px;
       margin-bottom: 5px;
     }
@@ -68,6 +71,9 @@ body {
       font-size: 14px;
       border-radius: 2px;
       &.selected {
+        color: #705AFF;
+      }
+      &:hover {
         color: #705AFF;
       }
     }
